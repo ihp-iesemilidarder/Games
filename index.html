@@ -5,10 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Games</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div>
-        
-    </div>
+    <main>
+        <div id="header">
+            <h1>Games</h1>
+            <div></div>
+        </div>
+        <form>
+            <fieldset>
+                <legend>Ficha juegos</legend>
+                <input type="text" name="name" id="name" placeholder="Nombre">
+                <input type="date" name="data" id="data" placeholder="Lanzamiento">
+                <input type="number" name="pegi" id="pegi" pattern="3|7|12|16|18" placeholder="Pegi">
+                <input type="text" name="developers" id="developers" placeholder="Desarrollador">
+                <select name="gener" placeholder="Genero" id="gener">
+                    <option value="" selected>-- Genero --</option>
+                    <option value="action">Acción</option>
+                    <option value="action">Aventura</option>
+                    <option value="action">Romance</option>
+                    <option value="action">Violencia</option>
+                </select>
+            </fieldset>
+            <input type="submit" value="Enviar">
+        </form>
+        <div id="list">
+            <h1>Lista de juegos</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Desarrollador</th>
+                        <th>Lanzamiento</th>                        
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Star Wars Jedi: Fallen Order</td>
+                        <td>Five Start Studio</td>
+                        <td>12/12/2019</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Terminator</td>
+                        <td>Marvel Studio</td>
+                        <td>12/12/2019</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Halo</td>
+                        <td>Pixel Studio</td>
+                        <td>12/12/2019</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="js/app.js"></script>
 </body>
 </html>
