@@ -34,6 +34,11 @@ main{
         text-align: center;
     }
 /* form */
+    main form fieldset legend{
+        font-size:2em;
+        font-weight:bold;
+        margin:0.67em 0;
+    }
     main form input, main form select{
         background: white;
         outline:none;
