@@ -76,3 +76,12 @@ main{
         width:7%;
         text-align:center;
     }
+    main table .buttons{
+    }
+    main table .buttons i{
+        font-size: 1.5em;
+    }
+    main table .fa-trash{
+        color:red;
+        cursor: pointer;
+    }

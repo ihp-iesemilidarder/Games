@@ -29,4 +29,14 @@ export class Game{
         if (playersJSON.find(obj=>obj.name==this.playerJSON.name)==null) playersJSON.push(this.playerJSON);
         populatePlayers(playersJSON);
     }
+    delete(e){
+        let node = e.target;
+        if(node.dataset.id){
+            let check = confirm("¿Quieres eliminar este jugador?");
+            if(check==true){
+                playersJSON.splice(node.dataset.id,1);
+                populatePlayers(playersJSON);
+            }
+        }
+    }
 }

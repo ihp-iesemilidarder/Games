@@ -4,21 +4,18 @@ const table = document.querySelector("table tbody");
 const sendForm = document.querySelector("form input[type='submit']");
 const form = document.querySelector("form");
 
-const getPlayers=async()=>{
-    let res = await fetch("data/players.json");
-    let data=await res.json();
-    playersJSON=data;
-}
-
 export const populatePlayers=(json)=>{
     table.innerHTML="";
     json.forEach((player,index) => {
         table.innerHTML+=`
         <tr>
-            <td>${index++}</td>
+            <td>${index+1}</td>
             <td>${player.name}</td>
             <td>${player.developer}</td>
             <td>${player.date}</td>
+            <td class="buttons">
+                <i class="fa fa-trash" data-id="${index}"></i>
+            </td>
         </tr>
         `;        
     });
@@ -26,8 +23,8 @@ export const populatePlayers=(json)=>{
 }
 
 const init=async()=>{
-    if(playersJSON.length==0) await getPlayers();
     populatePlayers(playersJSON);
     sendForm.addEventListener("click",(e)=>new Game(form,e).add());
+    table.addEventListener("click",(e)=>new Game(form,e).delete(e));
 }
 document.addEventListener("DOMContentLoaded",init);
